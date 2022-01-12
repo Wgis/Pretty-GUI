@@ -2,6 +2,7 @@
 local PANEL = {}
 
 AccessorFunc( PANEL, "m_bBorder", "DrawBorder", FORCE_BOOL )
+AccessorFunc( PANEL, "Text", "Text", FORCE_STRING )
 
 function PANEL:Init()
 
@@ -20,7 +21,9 @@ function PANEL:Init()
 
 	self:SetCursor( "hand" )
 	self:SetFont( "DermaDefault" )
-
+	self:SetSkin("PGUI")
+	self:SetTextColor( Color( 0, 0, 0, 0) )
+	self:SetText("Кнопка")
 end
 
 function PANEL:IsDown()

@@ -15,9 +15,9 @@ end
 function PANEL:UpdateText()
 
 	local str = input.GetKeyName( self:GetSelectedNumber() )
-	if ( !str ) then str = "NONE" end
+	if ( !str ) then str = "Отсутствует" end
 
-	str = language.GetPhrase( str )
+	//str = language.GetPhrase( str )
 
 	self:SetText( str )
 
@@ -25,7 +25,7 @@ end
 
 function PANEL:DoClick()
 
-	self:SetText( "PRESS A KEY" )
+	self:SetText( "Нажми любую кнопку" )
 	input.StartKeyTrapping()
 	self.Trapping = true
 
@@ -33,7 +33,7 @@ end
 
 function PANEL:DoRightClick()
 
-	self:SetText( "NONE" )
+	self:SetText( "Отсутствует" )
 	self:SetValue( 0 )
 
 end
@@ -89,4 +89,4 @@ end
 function PANEL:OnChange()
 end
 
-derma.DefineControl( "DBinder", "", PANEL, "DButton" )
+derma.DefineControl( "UI.Binder", "", PANEL, "UI.Button" )

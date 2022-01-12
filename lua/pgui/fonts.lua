@@ -1,4 +1,4 @@
-for i = 4, 60, 2 do
+for i = 1, 60, 2 do
     surface.CreateFont('Roboto.' .. i, {
         font = 'Roboto',
         size = Scale(i),
