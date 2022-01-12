@@ -31,7 +31,7 @@ function PANEL:Init()
     self:SetPaintBackgroundEnabled(false)
     self:SetPaintBorderEnabled(false)
     self.m_fCreateTime = SysTime()
-    self:DockPadding(5, 2 + 25 + 2, 5, 5)
+    self:DockPadding(5, 2 + 25 + 2 + 6, 5, 5)
     self:SetSkin("PGUI")
 end
 

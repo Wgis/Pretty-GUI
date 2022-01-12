@@ -11,11 +11,12 @@ function SKIN:PaintFrame(self, w, h)
     local clr_bg = Color(0, 0, 0, 200)
     local l, t, r, b = self:GetDockPadding()
 
-    draw.RoundedBox(6, 0, 0, w, h, clr_bg)
-    draw.SimpleText(self:GetTitle(), "Roboto.20", 5, (2 + 25 + 2) / 2 , Colors.White, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
+    draw.RoundedBox(6, 0, 0, w, t - 6, clr_bg)
+    draw.RoundedBox(6, 0, t - 5, w, h - t + b, clr_bg)
+    draw.SimpleText(self:GetTitle(), "Roboto.22", 5, (2 + 25 + 2) / 2 , Colors.White, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
 
-    surface.SetDrawColor(255, 255, 255, 100)
-    surface.DrawLine(0, t, w, t)
+    --surface.SetDrawColor(255, 255, 255, 100)
+    --surface.DrawLine(0, t - 6, w / 2, t - 6)
 end
 
 function SKIN:PaintCloseButton(self, w, h)
