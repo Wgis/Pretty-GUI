@@ -257,4 +257,4 @@ function PANEL:PerformLayout()
 
 end
 
-derma.DefineControl( "DFrame", "A simple window", PANEL, "EditablePanel" )
+derma.DefineControl( "UI.Frame", "A simple window", PANEL, "EditablePanel" )
