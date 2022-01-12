@@ -4,12 +4,18 @@ local SKIN = {
 }
 
 function SKIN:PaintFrame(self, w, h)
+    if self:GetBlur() ~= false then
+        draw.BlurPanel( self, 16, 16, 255 )
+    end
+
     local clr_bg = Color(0, 0, 0, 200)
-    draw.RoundedBox(6, 0, 0, w, h, clr_bg)
-    draw.SimpleText(self:GetTitle(), "Roboto.20", 5, 4, Colors.White, TEXT_ALIGN_LEFT, TEXT_ALIGN_TOP)
-    surface.SetDrawColor(255, 255, 255, 100)
     local l, t, r, b = self:GetDockPadding()
-    surface.DrawLine(0, t - 6, w, t - 6)
+
+    draw.RoundedBox(6, 0, 0, w, h, clr_bg)
+    draw.SimpleText(self:GetTitle(), "Roboto.20", 5, (2 + 25 + 2) / 2 , Colors.White, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
+
+    surface.SetDrawColor(255, 255, 255, 100)
+    surface.DrawLine(0, t, w, t)
 end
 
 function SKIN:PaintCloseButton(self, w, h)

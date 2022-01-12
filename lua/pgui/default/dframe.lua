@@ -9,6 +9,7 @@ AccessorFunc(PANEL, "m_iMinWidth", "MinWidth", FORCE_NUMBER)
 AccessorFunc(PANEL, "m_iMinHeight", "MinHeight", FORCE_NUMBER)
 AccessorFunc(PANEL, "m_bBackgroundBlur", "BackgroundBlur", FORCE_BOOL)
 AccessorFunc(PANEL, "Title", "Title", FORCE_STRING)
+AccessorFunc(PANEL, "Blur", "Blur", FORCE_BOOL)
 
 function PANEL:Init()
     self:SetFocusTopLevel(true)
@@ -30,7 +31,7 @@ function PANEL:Init()
     self:SetPaintBackgroundEnabled(false)
     self:SetPaintBorderEnabled(false)
     self.m_fCreateTime = SysTime()
-    self:DockPadding(5, 29 + 6, 5, 5)
+    self:DockPadding(5, 2 + 25 + 2, 5, 5)
     self:SetSkin("PGUI")
 end
 
