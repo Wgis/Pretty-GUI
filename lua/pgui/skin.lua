@@ -33,4 +33,8 @@ function SKIN:PaintCloseButton(self, w, h)
     draw.SimpleText("❌", "Roboto.30", w / 2, h / 2 - Scale(4), clr_sym, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 end
 
+function SKIN:PaintPanel(self, w, h)
+    draw.RoundedBox(6, 0, 0, w, h, Colors.White, false, false, true, true)
+end
+
 derma.DefineSkin("PGUI", "PGUI скин", SKIN)
