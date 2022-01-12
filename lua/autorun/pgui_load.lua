@@ -28,4 +28,6 @@ end
 
 LoadFile(root .. "/utils.lua")
 LoadFile(root .. "/fonts.lua")
+LoadFile(root .. "/colors.lua")
+LoadFile(root .. "/skin.lua")
 LoadFolder(root)
