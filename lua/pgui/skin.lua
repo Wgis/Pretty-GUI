@@ -37,9 +37,18 @@ function SKIN:PaintButton(self, w, h)
     local clr_bg = Color(255, 255, 255, 100)
     local clr_sym = Color(0, 0, 0, 200)
     if not self.m_bBackground then return end
-    if self.Depressed or self:IsSelected() or self:GetToggle() then clr_bg = Color(0, 140, 255) end
-    if self.Hovered then clr_bg.a, clr_sym.a = 255, 255 end
-    if self:GetDisabled() then clr_bg = Color(255, 103, 103, 100) end
+
+    if self.Depressed or self:IsSelected() or self:GetToggle() then
+        clr_bg = Color(0, 140, 255)
+    end
+
+    if self.Hovered then
+        clr_bg.a, clr_sym.a = 255, 255
+    end
+
+    if self:GetDisabled() then
+        clr_bg = Color(255, 103, 103, 100)
+    end
 
     draw.RoundedBox(6, 0, 0, w, h, clr_bg)
     draw.SimpleText(self:GetText(), "Roboto." .. math.Round(h / 1.5), w / 2, h / 2, clr_sym, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
