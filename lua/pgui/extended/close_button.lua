@@ -1,7 +1,6 @@
 local PANEL = {}
 
 function PANEL:Init()
-
     self:SetTall(25)
     self:SetMouseInputEnabled(true)
     self:SetKeyboardInputEnabled(true)
@@ -30,6 +29,13 @@ end
 function PANEL:SizeToContents()
     local w, h = self:GetContentSize()
     self:SetSize(w + 8, h + 4)
+end
+
+function PANEL:GenerateExample(ClassName, PropertySheet, Width, Height)
+    local ctrl = vgui.Create(ClassName)
+    ctrl:SetText("")
+    ctrl:SetWide(25)
+    PropertySheet:AddSheet(ClassName, ctrl, nil, true, true)
 end
 
 derma.DefineControl("UI.CloseButton", "Кнопка закрытия", PANEL, "DLabel")
